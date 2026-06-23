@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USEAF x Guide Academy - AI Course</title>
-    <!-- Google Fonts: Cairo for Arabic, Space Grotesk for numbers/English to match the Web3/Tech vibe -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-blue: #0A25D6; /* Deep vibrant blue from the image */
-            --neon-green: #D1FF19; /* High contrast neon green */
+            --bg-blue: #0A25D6;
+            --neon-green: #D1FF19;
             --pure-white: #FFFFFF;
             --text-dark: #111111;
             --glass-bg: rgba(255, 255, 255, 0.15);
@@ -29,7 +28,6 @@
 
         body {
             background-color: var(--bg-blue);
-            /* Creating the blueprint grid background */
             background-image: 
                 linear-gradient(var(--grid-color) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
@@ -40,7 +38,6 @@
             width: 100vw;
         }
 
-        /* Presentation Container */
         .presentation-container {
             position: relative;
             height: 100vh;
@@ -80,14 +77,11 @@
         .logo-placeholder {
             width: 30px;
             height: 30px;
-            background: #eee;
+            background: transparent;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.6rem;
-            color: #888;
-            border: 1px dashed #ccc;
             overflow: hidden;
         }
 
@@ -133,7 +127,6 @@
             transform: scale(1);
         }
 
-        /* Hero Typography (Brutalist/Oversized) */
         h1 {
             font-size: 6rem;
             font-weight: 900;
@@ -144,9 +137,7 @@
             z-index: 10;
         }
 
-        .highlight-green {
-            color: var(--neon-green);
-        }
+        .highlight-green { color: var(--neon-green); }
 
         .hero-subtitle {
             font-size: 1.5rem;
@@ -175,18 +166,9 @@
             z-index: 15;
         }
 
-        .glass-float img, .glass-float i {
-            font-size: 3rem;
-            color: var(--pure-white);
-        }
-        
-        .glass-float span {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
+        .glass-float img, .glass-float i { font-size: 3rem; color: var(--pure-white); }
+        .glass-float span { font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; font-weight: 700; }
 
-        /* Floating Animation Keyframes */
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(2deg); }
@@ -195,9 +177,7 @@
 
         .float-1 { top: 25%; left: 15%; animation-delay: 0s; transform: rotate(-5deg); }
         .float-2 { bottom: 30%; right: 18%; animation-delay: 2s; transform: rotate(8deg); }
-        .float-3 { top: 20%; right: 10%; animation-delay: 1s; }
 
-        /* Neon Decorations (Scribbles/Arrows) */
         .neon-scribble {
             position: absolute;
             color: var(--neon-green);
@@ -206,7 +186,6 @@
             z-index: 20;
             pointer-events: none;
         }
-        
         .scribble-1 { font-size: 8rem; top: 15%; left: 25%; transform: rotate(-15deg); }
         .scribble-2 { font-size: 4rem; bottom: 35%; left: 30%; transform: rotate(45deg); }
         .scribble-3 { font-size: 6rem; top: 10%; right: 28%; transform: rotate(120deg); }
@@ -233,7 +212,7 @@
             border: 2px dashed var(--bg-blue);
         }
 
-        /* White Bottom Container (For Content Slides) */
+        /* White Bottom Container */
         .white-container {
             background: var(--pure-white);
             color: var(--text-dark);
@@ -244,7 +223,7 @@
             display: flex;
             flex-direction: column;
             position: absolute;
-            bottom: -50px; /* Slight cutoff effect */
+            bottom: -50px; 
             box-shadow: 0 -20px 50px rgba(0,0,0,0.3);
             z-index: 5;
             transition: all 0.5s ease;
@@ -281,18 +260,8 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.05);
         }
 
-        .info-card h3 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .info-card p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.6;
-        }
+        .info-card h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; }
+        .info-card p { font-size: 1.1rem; color: #555; line-height: 1.6; }
 
         .card-tag {
             position: absolute;
@@ -333,31 +302,13 @@
             transition: color 0.3s;
         }
 
-        .nav-btn:hover {
-            color: var(--neon-green);
-        }
+        .nav-btn:hover { color: var(--neon-green); }
 
-        .slide-dots {
-            display: flex;
-            gap: 10px;
-        }
+        .slide-dots { display: flex; gap: 10px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; }
+        .dot.active { background: var(--neon-green); width: 25px; border-radius: 50px; }
 
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.3);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .dot.active {
-            background: var(--neon-green);
-            width: 25px;
-            border-radius: 50px;
-        }
-
-        /* Social Media & Contact Section (Slide 5) */
+        /* Social Media & Contact Section */
         .social-links-container {
             display: flex;
             flex-wrap: wrap;
@@ -379,37 +330,11 @@
             transition: transform 0.3s ease;
         }
 
-        .social-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-green);
-        }
-
-        .social-box h4 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--pure-white);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        .social-icon {
-            color: var(--pure-white);
-            font-size: 1.8rem;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            color: var(--neon-green);
-            transform: scale(1.2) rotate(5deg);
-        }
+        .social-box:hover { transform: translateY(-5px); border-color: var(--neon-green); }
+        .social-box h4 { font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; color: var(--pure-white); }
+        .social-icons { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; }
+        .social-icon { color: var(--pure-white); font-size: 1.8rem; transition: all 0.3s; text-decoration: none; }
+        .social-icon:hover { color: var(--neon-green); transform: scale(1.2) rotate(5deg); }
 
         .contact-pill {
             display: inline-flex;
@@ -426,46 +351,95 @@
             margin-top: 10px;
             border: 1px solid transparent;
         }
+        .contact-pill:hover { background: var(--neon-green); color: var(--text-dark); border-color: var(--neon-green); }
 
-        .contact-pill:hover {
-            background: var(--neon-green);
-            color: var(--text-dark);
-            border-color: var(--neon-green);
+        /* =========================================
+           📱 MOBILE RESPONSIVENESS (Media Queries)
+           ========================================= */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .hero-subtitle { font-size: 1.1rem; padding: 0 10px; }
+            
+            .top-bar { top: 10px; flex-direction: column; gap: 10px; }
+            .collab-badges { font-size: 0.85rem; padding: 5px 15px; }
+            .cta-header-btn { display: none; } /* Hide secondary CTA on mobile */
+
+            .slide { 
+                padding: 120px 5% 100px; /* More top padding to clear header */
+                justify-content: flex-start; /* Push content to top */
+                overflow-y: auto; /* Enable scrolling inside slide */
+                overflow-x: hidden;
+            }
+
+            /* Make absolute titles relative on mobile so they don't overlap */
+            .slide > div[style*="position: absolute"] {
+                position: relative !important;
+                top: auto !important;
+                margin-bottom: 20px;
+            }
+            .slide > div[style*="position: absolute"] h2 {
+                font-size: 2.2rem !important;
+            }
+
+            .white-container {
+                position: relative; /* Remove absolute positioning */
+                bottom: auto;
+                width: 100%;
+                height: auto; /* Auto height based on content */
+                min-height: auto;
+                padding: 25px 20px;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+
+            .slide-header-dark { font-size: 1.8rem; margin-bottom: 20px; }
+            
+            .cards-grid { grid-template-columns: 1fr; gap: 20px; }
+            .info-card { padding: 20px; }
+            .info-card h3 { font-size: 1.3rem; }
+            .info-card p { font-size: 1rem; }
+
+            /* Hide decorative elements to save space on mobile */
+            .glass-float, .neon-scribble { display: none; }
+            .circular-badge { width: 80px; height: 80px; font-size: 0.9rem; bottom: 10%; right: 5%; }
+
+            .social-links-container { flex-direction: column; gap: 15px; }
+            .social-box { min-width: 100%; padding: 15px; }
+
+            .controls { 
+                bottom: 15px; 
+                width: 90%; 
+                justify-content: space-between; 
+                padding: 10px 20px; 
+            }
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Header Collab -->
     <div class="top-bar">
         <div class="collab-badges">
-            <!-- لوجو يوسف أسامة -->
-            <div class="logo-placeholder" title="Youssef Osama Logo" style="border: none; background: transparent;">
+            <div class="logo-placeholder" title="Youssef Osama Logo">
                 <img src="Asset 2.png" alt="Youssef Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
             </div>
             Youssef Osama 
             <span style="color: var(--bg-blue);">X</span> 
-            <!-- لوجو Guide Academy -->
-            <div class="logo-placeholder" title="Guide Academy Logo" style="border: none; background: transparent;">
+            <div class="logo-placeholder" title="Guide Academy Logo">
                 <img src="GuideLogo.png" alt="Guide Academy Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
             </div>
             Guide Academy
         </div>
-        <a href="#" class="cta-header-btn">احجز مقعدك</a>
+        <a href="https://api.whatsapp.com/send/?phone=201011663197&text&type=phone_number&app_absent=0" target="_blank" class="cta-header-btn">احجز مقعدك</a>
     </div>
 
     <div class="presentation-container">
 
-        <!-- SLIDE 1: The Hero (Brutalist Poster Style) -->
         <div class="slide active">
-            <!-- Decorative Elements -->
             <div class="neon-scribble scribble-1">#</div>
             <div class="neon-scribble scribble-2">⤴</div>
             <div class="neon-scribble scribble-3">⤵</div>
             <div class="circular-badge">كراش<br>كورس<br>مجاني</div>
 
-            <!-- Glass Cards -->
             <div class="glass-float float-1">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <span>Gemini.ai</span>
@@ -475,7 +449,6 @@
                 <span>chatgpt.prompt</span>
             </div>
 
-            <!-- Main Titles -->
             <h1>
                 AI <span class="highlight-green">CONTENT</span><br>
                 FACTORY
@@ -483,7 +456,6 @@
             <p class="hero-subtitle">إزاي الذكاء الاصطناعي بيعمل شغل أسبوع في ساعتين بس! دليلك الشامل لمضاعفة إنتاجيتك.</p>
         </div>
 
-        <!-- SLIDE 2: The Core Problem (White Container Style) -->
         <div class="slide">
             <div style="position: absolute; top: 15%; width: 100%; text-align: center;">
                 <h2 style="font-size: 3rem; font-weight: 900;">ليه لازم <span class="highlight-green">تتغير</span>؟</h2>
@@ -511,7 +483,6 @@
             </div>
         </div>
 
-        <!-- SLIDE 3: Module 1 & 2 -->
         <div class="slide">
              <div style="position: absolute; top: 15%; width: 100%; text-align: center;">
                 <h2 style="font-size: 3rem; font-weight: 900;">خريطة <span class="highlight-green">الكورس</span></h2>
@@ -543,7 +514,6 @@
             </div>
         </div>
 
-        <!-- SLIDE 4: Module 3 & Workflow -->
         <div class="slide">
              <div style="position: absolute; top: 15%; width: 100%; text-align: center;">
                 <h2 style="font-size: 3rem; font-weight: 900;">التنفيذ <span class="highlight-green">النهائي</span></h2>
@@ -566,7 +536,6 @@
             </div>
         </div>
 
-        <!-- SLIDE 5: Pitch / CTA & Contact -->
         <div class="slide">
             <div class="neon-scribble scribble-2" style="top: 15%; left: 10%;">#</div>
             <h1 style="font-size: 4rem;">
@@ -578,10 +547,8 @@
                 انضم الآن <i class="fa-solid fa-arrow-left"></i>
             </a>
 
-            <!-- Social Media & Contact Info -->
             <div class="social-links-container">
                 
-                <!-- Youssef Osama Info -->
                 <div class="social-box">
                     <h4>Youssef Osama</h4>
                     <div class="social-icons">
@@ -592,7 +559,6 @@
                     </div>
                 </div>
 
-                <!-- Guide Academy Info -->
                 <div class="social-box">
                     <h4>Guide Academy</h4>
                     <div class="social-icons">
@@ -608,7 +574,6 @@
             <div class="circular-badge" style="bottom: 10%; right: 15%; transform: rotate(15deg); background: var(--pure-white);">OFFER<br>50%</div>
         </div>
 
-        <!-- Navigation Controls -->
         <div class="controls">
             <button class="nav-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-right"></i></button>
             <div class="slide-dots" id="dotsContainer"></div>
